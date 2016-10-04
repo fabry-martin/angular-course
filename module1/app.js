@@ -7,19 +7,21 @@
 
     LunchCheckController.$inject = ['$scope'];
     function LunchCheckController($scope) {
-        $scope.message = "";
+        $scope.resMessage = "";
         $scope.lunchList = "";
+        $scope.msgStyle = "";
 
         $scope.checkLunch = function () {
             if ($scope.lunchList === "") { 
-                $scope.message = "Empty string";
+                $scope.resMessage = "Empty string";
+                $scope.msgStyle = "red";
             } else {
-
+                $scope.msgStyle = "green";
                 var splitted = $scope.lunchList.split(",");
                 if (splitted.length > 3) {
-                    $scope.message = "Too much";
+                    $scope.resMessage = "Too much";
                 } else {
-                    $scope.message = "Enjoy";
+                    $scope.resMessage = "Enjoy";
                 }
             }
         };
