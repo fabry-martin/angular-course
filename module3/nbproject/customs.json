@@ -1,0 +1,13 @@
+{
+    "elements": {
+        "found-items": {
+            "attributes": {
+                "initial-search": {},
+                "on-remove": {},
+                "title": {},
+                "items": {}
+            }
+        }
+    },
+    "attributes": {}
+}
