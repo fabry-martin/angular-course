@@ -20,10 +20,27 @@
                     controller: 'CategoryListController as catList',
                     resolve: {
                         categoriesFromService: ['MenuDataService', function (MenuDataService) {
+                                console.log('loading categories');
                                 var promise = MenuDataService.getAllCategories();
                                 return promise.then(function (response) {
-                                    console.log("Loaded");
                                     return  response.data;
+                                }).catch(function (error) {
+                                    console.log(error);
+                                });
+                            }]
+                    }
+                })
+                .state('items', {
+                    url: '/items/{catShortName}',
+                    templateUrl: 'src/templates/item.list.template.html',
+                    controller: 'ItemsInCategoryController as itemListCtrl',
+                    resolve: {
+                        itemsInCategory: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
+                                var categoryName = $stateParams.catShortName;
+                                console.log('loading items in category ' + categoryName);
+                                var promise = MenuDataService.getItemsForCategory(categoryName);
+                                return promise.then(function (response) {
+                                    return response.data.menu_items;
                                 }).catch(function (error) {
                                     console.log(error);
                                 });

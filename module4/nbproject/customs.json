@@ -1,5 +1,6 @@
 {
     "elements": {
+        "item-list": {},
         "ui-view": {},
         "categories": {
             "attributes": {

@@ -1,7 +1,5 @@
-<!--<span>{{$ctrl}}</span>-->
-<!--<span>{{$scope}}</span>-->
 <ul>
-    <li ui-sref="itemDetail({itemId: item.id})" ng-repeat="item in $ctrl.categoryList">
+    <li ng-repeat="item in $ctrl.categoryList" ui-sref="items({catShortName : item.short_name})">
         {{item.name}}
     </li>
 </ul>
