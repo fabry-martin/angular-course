@@ -1,0 +1,13 @@
+{
+    "elements": {
+        "ui-view": {},
+        "categories": {
+            "attributes": {
+                "items": {}
+            }
+        }
+    },
+    "attributes": {
+        "ui-sref": {}
+    }
+}
