@@ -1,0 +1,48 @@
+<div>
+    <h2 id="menu-categories-title" class="text-center">Sign up</h2>
+    <fieldset>
+        <legend>Fill in user data</legend>
+        <form name="userForm" novalidate>
+            <!--first name,--> 
+            <input type="text" name="firstname" placeholder="First Name"
+                   required
+                   ng-model="signCtrl.firstname">
+
+            <br>
+            <!--last name-->
+            <input type="text" name="lastname" placeholder="Last Name"
+                   required
+                   ng-model="signCtrl.lastname">
+            <br>
+            <!--email address-->
+            <input type="email" name="email" placeholder="Email"
+                   required
+                   ng-model="signCtrl.email">
+
+            <br>
+
+            <!--phone number-->
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+                   required
+                   pattern="(\d{3})-(\d{3})-(\d{4})"
+                   ng-model="signCtrl.phoneNumber">
+            <br>
+
+            <!-- favourite dish -->
+            <input type="text" name="favourite" placeholder="Favourite Dish"
+                   required
+                   ng-model="signCtrl.favourite">
+            <div ng-if="signCtrl.errorMessage !== undefined" class="error">{{signCtrl.errorMessage}}</div> 
+            <br>
+            <button
+                ng-disabled="userForm.$invalid"
+                ng-click="signCtrl.submit()">Submit</button>
+
+            <div ng-if="userForm.firstname.$error.required && userForm.firstname.$touched">First Name must be filled</div> 
+            <div ng-if="userForm.lastname.$error.required && userForm.lastname.$touched">Last Name must be filled</div> 
+            <div ng-if="userForm.email.$invalid && userForm.email.$touched">Email must be filled</div> 
+            <div ng-if="userForm.phone.$invalid && userForm.phone.$touched">Phone must be in the format ###-###-####</div> 
+            <div ng-if="userForm.favourite.$error.required && userForm.favourite.$touched">Favourite dish must be filled</div> 
+        </form>
+    </fieldset>
+</div>
