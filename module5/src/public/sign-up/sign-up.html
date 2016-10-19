@@ -20,13 +20,6 @@
                    ng-model="signCtrl.email">
 
             <br>
-             <!--address-->
-            <input type="text" name="address" placeholder="Address"
-                   required
-                   ng-model="signCtrl.address">
-
-            <br>
-
             <!--phone number-->
             <input type="text" name="phone" placeholder="Phone ###-###-####"
                    required
@@ -47,7 +40,6 @@
             <div ng-if="userForm.firstname.$error.required && userForm.firstname.$touched">First Name must be filled</div> 
             <div ng-if="userForm.lastname.$error.required && userForm.lastname.$touched">Last Name must be filled</div> 
             <div ng-if="userForm.email.$invalid && userForm.email.$touched">Email must have proper format</div> 
-            <div ng-if="userForm.address.$invalid && userForm.address.$touched">Address must be filled</div> 
             <div ng-if="userForm.phone.$invalid && userForm.phone.$touched">Phone must be in the format ###-###-####</div> 
             <div ng-if="userForm.favourite.$error.required && userForm.favourite.$touched">Favourite dish must be filled</div> 
         </form>

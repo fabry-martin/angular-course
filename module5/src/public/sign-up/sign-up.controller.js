@@ -12,7 +12,6 @@
         $ctrl.firstname;
         $ctrl.lastname;
         $ctrl.email;
-        $ctrl.address;
         $ctrl.phoneNumber;
         $ctrl.favourite;
         $ctrl.errorMessage;
@@ -30,7 +29,6 @@
                     firstname: $ctrl.firstname,
                     lastname : $ctrl.lastname,
                     email : $ctrl.email,
-                    address : $ctrl.address,
                     phone : $ctrl.phoneNumber,
                     menuItem : response.data
                 };
