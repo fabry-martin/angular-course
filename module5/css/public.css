@@ -134,6 +134,14 @@ input {
 button  {
     color: #557c3e;
 }
+
+.centered {
+  text-align: center;   
+}   
+
+.single-item {
+    padding-bottom: 3em;
+}
 /* END SINGLE CATEGORY PAGE */
 
 

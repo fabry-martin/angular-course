@@ -1,4 +1,20 @@
 <div>
     <h2 id="menu-categories-title" class="text-center">My Info</h2>
-   
+    <div ng-if="!myInfoCtrl.isUserDefined()" class="centered">Not Signed Up Yet.
+        <a ui-sref="public.signup">
+            <div>Sign up now!</div>
+        </a>
+    </div>
+
+    <div ng-if="myInfoCtrl.isUserDefined()" class="centered">User info
+        <div>{{myInfoCtrl.getUser().firstname}}</div>
+        <div>{{myInfoCtrl.getUser().lastname}}</div>
+        <div>{{myInfoCtrl.getUser().email}}</div>
+        <div>{{myInfoCtrl.getUser().address}}</div>
+        <div>{{myInfoCtrl.getUser().phone}}</div>
+
+        <menu-item 
+            menu-item="myInfoCtrl.getUser().menuItem" class="single-item container centered ">
+        </menu-item>
+    </div>
 </div>

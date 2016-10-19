@@ -32,9 +32,10 @@
                     email : $ctrl.email,
                     address : $ctrl.address,
                     phone : $ctrl.phoneNumber,
-                    favourite : $ctrl.favourite
+                    menuItem : response.data
                 };
                 console.log(user);
+                UserService.user = user;
                 $ctrl.errorMessage = "Your information has been saved";
             }).catch( function (error) {
                 console.log(error);
